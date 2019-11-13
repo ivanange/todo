@@ -109,4 +109,14 @@ class TodoController extends Controller
     {
         $todo->delete();
     }
+
+    public function apiFallback()
+    {
+        return response()->json("",404);
+    }
+
+    public function webFallback()
+    {
+        return view('app');
+    }
 }

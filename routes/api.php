@@ -27,8 +27,6 @@ Route::prefix('todos')->group(function () {
 
 });
 
-Route::fallback( function () {
-    return response()->json("",404);
-});
+Route::fallback( "TodoController@apiFallback" );
 
 

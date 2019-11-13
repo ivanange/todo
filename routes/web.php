@@ -12,10 +12,6 @@
 |
 */
 
-Route::get('/{any}', function () {
-    return view('app');
-})->where('any', '.*');
+Route::get('/{any}', "TodoController@webFallback" )->where('any', '.*');
 
-Route::fallback( function () {
-    return view('app');
-});
+Route::fallback( "TodoController@webFallback" );
